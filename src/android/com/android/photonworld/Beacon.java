@@ -46,7 +46,7 @@ public class Beacon extends CordovaPlugin {
 			CallbackContext callbackContext) throws JSONException {
 
 		if (action.equals(ACTION_INITIALIZE_BEACON)) {
-			String Gimbal_Api_Key = "79c30d48-5ed3-4174-8a28-978dcc0d3593";
+			String Gimbal_Api_Key = "356b4eca-dd0f-42f6-b37f-f1f35dda865e";
 			Gimbal.setApiKey(cordova.getActivity().getApplication(),
 					Gimbal_Api_Key);
 			sharedpreferences = cordova.getActivity().getSharedPreferences(
