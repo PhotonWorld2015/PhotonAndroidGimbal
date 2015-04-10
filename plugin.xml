@@ -2,7 +2,7 @@
 <plugin
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.photonworld.photonworld"
+    id="com.photon.photonworld"
     version="4.2.9">
 
    <name>Gimbal iBeacon</name>
@@ -25,7 +25,7 @@
    <platform name="android">
       <config-file target="res/xml/config.xml" parent="/*">
          <feature name="Beacon">
-            <param name="android-package" value="com.photonworld.photonworld.Beacon" />
+            <param name="android-package" value="com.photon.photonworld.Beacon" />
          </feature>
       </config-file>
 	<config-file target="AndroidManifest.xml" parent="/manifest/application">
@@ -33,7 +33,7 @@
     android:name="com.gimbal.internal.service.GimbalService"
     android:exported="false" >
      <intent-filter>
-         <action android:name="com.photonworld.photonworld.service.GIMBAL_SERVICE" />
+         <action android:name="com.photon.photonworld.service.GIMBAL_SERVICE" />
      </intent-filter>
     </service>
 
@@ -63,15 +63,15 @@
      </config-file>
      
 	
-	 <source-file src="src/android/com/photonworld/photonworld/gimballibs/gimbal.jar" target-dir="libs" framework="true" />
-	 <source-file src="src/android/com/photonworld/photonworld/gimballibs/gimbal-dev-logging.jar" target-dir="libs" framework="true" />  
-	 <source-file src="src/android/com/photonworld/photonworld/gimballibs/spring-android-rest-template-1.0.1.RELEASE.jar" target-dir="libs" framework="true" />
-	 <source-file src="src/android/com/photonworld/photonworld/gimballibs/spring-android-core-1.0.1.RELEASE.jar" target-dir="libs" framework="false" />
-	<source-file src="src/android/com/photonworld/photonworld/Beacon.java" target-dir="src/com/photon/photonworld" />
+	 <source-file src="src/android/com/photon/photonworld/gimballibs/gimbal.jar" target-dir="libs" framework="true" />
+	 <source-file src="src/android/com/photon/photonworld/gimballibs/gimbal-dev-logging.jar" target-dir="libs" framework="true" />  
+	 <source-file src="src/android/com/photon/photonworld/gimballibs/spring-android-rest-template-1.0.1.RELEASE.jar" target-dir="libs" framework="true" />
+	 <source-file src="src/android/com/photon/photonworld/gimballibs/spring-android-core-1.0.1.RELEASE.jar" target-dir="libs" framework="false" />
+	<source-file src="src/android/com/photon/photonworld/Beacon.java" target-dir="src/com/photon/photonworld" />
 	 
-	 <source-file src="src/android/com/photonworld/photonworld/res/drawable/appicon.png" target-dir="res/drawable" framework="true" />
-	 <source-file src="src/android/com/photonworld/photonworld/res/drawable-hdpi/appicon.png" target-dir="res/drawable-hdpi" framework="true" />
-	 <source-file src="src/android/com/photonworld/photonworld/res/drawable-mdpi/appicon.png" target-dir="res/drawable-mdpi" framework="true" />
-	 <source-file src="src/android/com/photonworld/photonworld/res/drawable-xhdpi/appicon.png" target-dir="res/drawable-xhdpi" framework="true" />
+	 <source-file src="src/android/com/photon/photonworld/res/drawable/appicon.png" target-dir="res/drawable" framework="true" />
+	 <source-file src="src/android/com/photon/photonworld/res/drawable-hdpi/appicon.png" target-dir="res/drawable-hdpi" framework="true" />
+	 <source-file src="src/android/com/photon/photonworld/res/drawable-mdpi/appicon.png" target-dir="res/drawable-mdpi" framework="true" />
+	 <source-file src="src/android/com/photon/photonworld/res/drawable-xhdpi/appicon.png" target-dir="res/drawable-xhdpi" framework="true" />
    </platform>
 </plugin>

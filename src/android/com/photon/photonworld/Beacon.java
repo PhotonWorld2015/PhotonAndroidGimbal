@@ -1,4 +1,4 @@
-package com.photonworld.photonworld;
+package com.photon.photonworld;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
