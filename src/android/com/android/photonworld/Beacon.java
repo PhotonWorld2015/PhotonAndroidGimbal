@@ -177,7 +177,7 @@ public class Beacon extends CordovaPlugin {
 		alertDialogBuilder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
 		public void onClick(DialogInterface dialog, int id) {
 		webView.sendJavascript("javascript:CheckInCallbackFromAndroid1();");
-		Toast.makeText(cordova.getActivity(), "Inside Yes", Toast.LENGTH_LONG).show();
+		
 		}
 		})
 		.setNegativeButton("No", new DialogInterface.OnClickListener() {
