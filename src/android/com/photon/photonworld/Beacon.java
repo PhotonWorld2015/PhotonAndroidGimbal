@@ -124,7 +124,7 @@ public class Beacon extends CordovaPlugin {
 				String placeName = visit.getPlace().getName();
 				onVisitStart = sharedpreferences.getString("onVisitStart", null);	
 				Checkin = sharedpreferences.getString("Checkin", null);
-						if (placeName.equalsIgnoreCase("Reception") || placeName.equalsIgnoreCase("OnsiteReception") || placeName.equalsIgnoreCase("PhotonCheBlock3-Visit")) {
+						if (placeName.equalsIgnoreCase("Reception") || placeName.equalsIgnoreCase("OnsiteReception") || placeName.equalsIgnoreCase("PhotonCheBlock3-Reception")) {
 							if (onVisitStart == null) {
 								message = "Welcome to the Photon World 2016 Conference !!!";
 								displayMessageAlertForReception(placeName, message,
@@ -134,7 +134,7 @@ public class Beacon extends CordovaPlugin {
 // 								editor.commit();
 							}
 						}
-						if (placeName.equalsIgnoreCase("Check-in") || placeName.equalsIgnoreCase("OnsiteCheckIn")) {
+						if (placeName.equalsIgnoreCase("Check-in") || placeName.equalsIgnoreCase("PhotonCheBlock3-Visit")) {
 							if (Checkin == null) {
 								message = "Skip the Queue, Register Instantly! Scan the QR code on your badge with your mobile";
 								displayMessageAlert(placeName, message,
@@ -151,7 +151,7 @@ public class Beacon extends CordovaPlugin {
 						String placeName = visit.getPlace().getName();
 						onVisitEnd = sharedpreferences.getString("onVisitEnd", null);	
 					
-						if (placeName.equalsIgnoreCase("Reception") || placeName.equalsIgnoreCase("OnsiteReception") || placeName.equalsIgnoreCase("PhotonCheBlock3-Visit")) {
+						if (placeName.equalsIgnoreCase("Reception") || placeName.equalsIgnoreCase("OnsiteReception") || placeName.equalsIgnoreCase("PhotonCheBlock3-Reception")) {
 							if (onVisitEnd == null) {
 								message = "Thank You for attending, See you next year!";
 								displayMessageAlertForReception(placeName, message,
