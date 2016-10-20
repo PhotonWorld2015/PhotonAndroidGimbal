@@ -134,7 +134,8 @@ public class Beacon extends CordovaPlugin {
 // 								editor.commit();
 							}
 						}
-						if (placeName.equalsIgnoreCase("Check-in") || placeName.equalsIgnoreCase("PhotonCheBlock3-Visit")) {
+					
+						if (placeName.equalsIgnoreCase("Check-in") || placeName.equalsIgnoreCase("OnsiteCheckIn") || placeName.equalsIgnoreCase("PhotonCheBlock3-Visit")) {
 							if (Checkin == null) {
 								message = "Skip the Queue, Register Instantly! Scan the QR code on your badge with your mobile";
 								displayMessageAlert(placeName, message,
