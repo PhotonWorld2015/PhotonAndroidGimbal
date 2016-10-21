@@ -175,18 +175,12 @@ public class Beacon extends CordovaPlugin {
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(cordova.getActivity());
 		alertDialogBuilder.setTitle(placeName);
 		alertDialogBuilder.setMessage(message);
-		alertDialogBuilder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
-		public void onClick(DialogInterface dialog, int id) {
-		webView.sendJavascript("javascript:CheckInCallbackFromAndroid1();");
 		
-		}
-		})
-		.setNegativeButton("No", new DialogInterface.OnClickListener() {
+		alertDialogBuilder.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 		public void onClick(DialogInterface dialog, int id) {
-						dialog.cancel();
-						
-					}
-				});
+			dialog.cancel();
+		}
+		});
 		AlertDialog alertDialog = alertDialogBuilder.create();
 		alertDialog.setCanceledOnTouchOutside(false);
 		alertDialog.show();
