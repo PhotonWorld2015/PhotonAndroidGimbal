@@ -51,7 +51,7 @@ public class Beacon extends CordovaPlugin {
 	
 	//Current date
 	 String currentdate = formatter.format(Calendar.getInstance().getTime());
-		     Date currentdate_parse = formatter.parse(date);
+		     Date currentdate_parse = formatter.parse(currentdate);
 	
 // 	Current time
 			String time="16:00";
@@ -152,8 +152,9 @@ public class Beacon extends CordovaPlugin {
 								displayMessageAlertForReception(placeName, message,
 										callbackContext);
 								displayNotificationAlert(message);
-								editor.putString("onVisitStart", "onVisitStart");
-								editor.commit();
+									
+// 								editor.putString("onVisitStart", "onVisitStart");
+// 								editor.commit();
 								}
 							}
 						}
@@ -167,8 +168,8 @@ public class Beacon extends CordovaPlugin {
 								displayMessageAlert(placeName, message,
 										callbackContext);
 
-								editor.putString("Checkin", "Checkin");
- 								editor.commit();
+// 								editor.putString("Checkin", "Checkin");
+//  								editor.commit();
 								}
 							}
 						}
@@ -188,8 +189,9 @@ public class Beacon extends CordovaPlugin {
 								displayMessageAlertForReception(placeName, message,
 										callbackContext);
 								displayNotificationAlert(message);
- 								editor.putString("onVisitEnd", "onVisitEnd");
-								editor.commit();
+									
+//  								editor.putString("onVisitEnd", "onVisitEnd");
+// 								editor.commit();
 								}
 							}
 						}
