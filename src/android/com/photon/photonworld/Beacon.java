@@ -42,22 +42,42 @@ public class Beacon extends CordovaPlugin {
 	private Editor editor;
 	private String message;
 	private NotificationManager mNotificationManager;
+	 String currentdate;
 	
-	 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-	 SimpleDateFormat formatternew = new SimpleDateFormat("HH:mm");
-		     Calendar c = Calendar.getInstance();
-	  String meetingdate = "03/11/2016";
-        Date meetingdate_parse = formatter.parse(meetingdate);
+	SimpleDateFormat formatter;
+	SimpleDateFormat formatternew;
+	 Calendar c;
+	 String meetingdate = "03/11/2016";
+	 Date meetingdate_parse;
+	 String currentdate;
+	  Date currentdate_parse;
+	String time="16:00";
+	 Date time_parse;
+	String timecurrent;
+	Date currentime_parse
+	
+	try
+	{
+	  formatter = new SimpleDateFormat("dd/MM/yyyy");
+	  formatternew = new SimpleDateFormat("HH:mm");
+		      c = Calendar.getInstance();
+	
+         meetingdate_parse = formatter.parse(meetingdate);
 	
 	//Current date
-	 String currentdate = formatter.format(Calendar.getInstance().getTime());
-		     Date currentdate_parse = formatter.parse(currentdate);
+	  currentdate = formatter.format(Calendar.getInstance().getTime());
+		      currentdate_parse = formatter.parse(currentdate);
 	
 // 	Current time
-			String time="16:00";
-		     Date time_parse = formatternew.parse(time);
-		     String timecurrent = formatternew.format(Calendar.getInstance().getTime());
-		     Date currentime_parse = formatternew.parse(timecurrent);
+			
+		      time_parse = formatternew.parse(time);
+		      timecurrent = formatternew.format(Calendar.getInstance().getTime());
+		      currentime_parse = formatternew.parse(timecurrent);
+	}
+	 catch (ParseException e) {
+  
+   e.printStackTrace();
+  }
 
 	@Override
 	public boolean execute(String action, JSONArray args,
