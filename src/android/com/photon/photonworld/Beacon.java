@@ -50,33 +50,35 @@ public class Beacon extends CordovaPlugin {
 	 Date time_parse=null;	
 	Date currentime_parse=null;
 	
-	try
-	{
-	  SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-	  SimpleDateFormat formatternew = new SimpleDateFormat("HH:mm");
-		      Calendar c = Calendar.getInstance();
-	
-         meetingdate_parse = formatter.parse(meetingdate);
-	
-	//Current date
-	  String currentdate = formatter.format(Calendar.getInstance().getTime());
-		      currentdate_parse = formatter.parse(currentdate);
-	
-// 	Current time
-			
-		      time_parse = formatternew.parse(time);
-		      String timecurrent = formatternew.format(Calendar.getInstance().getTime());
-		      currentime_parse = formatternew.parse(timecurrent);
+	public void initializeDate (){
+		try
+		{
+		  SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		  SimpleDateFormat formatternew = new SimpleDateFormat("HH:mm");
+			      Calendar c = Calendar.getInstance();
+		
+	         meetingdate_parse = formatter.parse(meetingdate);
+		
+		//Current date
+		  String currentdate = formatter.format(Calendar.getInstance().getTime());
+			      currentdate_parse = formatter.parse(currentdate);
+		
+//	 	Current time
+				
+			      time_parse = formatternew.parse(time);
+			      String timecurrent = formatternew.format(Calendar.getInstance().getTime());
+			      currentime_parse = formatternew.parse(timecurrent);
+		}
+		 catch (Exception e) {
+	  
+	   e.printStackTrace();
+	  }
 	}
-	 catch (Exception e) {
-  
-   e.printStackTrace();
-  }
 
 	@Override
 	public boolean execute(String action, JSONArray args,
 			CallbackContext callbackContext) throws JSONException {
-
+		initializeDate();
 		if (action.equals(ACTION_INITIALIZE_BEACON)) {
 			String Gimbal_Api_Key = "81090836-4036-4500-bcb4-fb5199403886";
 			Gimbal.setApiKey(cordova.getActivity().getApplication(),
