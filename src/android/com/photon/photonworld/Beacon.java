@@ -169,8 +169,8 @@ public class Beacon extends CordovaPlugin {
 										callbackContext);
 								displayNotificationAlert(message);
 									
-// 								editor.putString("onVisitStart", "onVisitStart");
-// 								editor.commit();
+								editor.putString("onVisitStart", "onVisitStart");
+								editor.commit();
 								}
 							}
 						}
@@ -184,8 +184,8 @@ public class Beacon extends CordovaPlugin {
 								displayMessageAlert(placeName, message,
 										callbackContext);
 
-// 								editor.putString("Checkin", "Checkin");
-//  								editor.commit();
+								editor.putString("Checkin", "Checkin");
+ 								editor.commit();
 								}
 							}
 						}
@@ -206,8 +206,8 @@ public class Beacon extends CordovaPlugin {
 										callbackContext);
 								displayNotificationAlert(message);
 									
-//  								editor.putString("onVisitEnd", "onVisitEnd");
-// 								editor.commit();
+ 								editor.putString("onVisitEnd", "onVisitEnd");
+								editor.commit();
 								}
 							}
 						}
