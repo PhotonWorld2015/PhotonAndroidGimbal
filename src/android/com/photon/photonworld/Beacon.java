@@ -25,6 +25,9 @@ import com.gimbal.android.Visit;
 import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 
 
@@ -39,6 +42,22 @@ public class Beacon extends CordovaPlugin {
 	private Editor editor;
 	private String message;
 	private NotificationManager mNotificationManager;
+	
+	 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+	 SimpleDateFormat formatternew = new SimpleDateFormat("HH:mm");
+		     Calendar c = Calendar.getInstance();
+	  String meetingdate = "03/11/2016";
+        Date meetingdate_parse = formatter.parse(meetingdate);
+	
+	//Current date
+	 String currentdate = formatter.format(Calendar.getInstance().getTime());
+		     Date currentdate_parse = formatter.parse(date);
+	
+// 	Current time
+			String time="16:00";
+		     Date time_parse = formatternew.parse(time);
+		     String timecurrent = formatternew.format(Calendar.getInstance().getTime());
+		     Date currentime_parse = formatternew.parse(timecurrent);
 
 	@Override
 	public boolean execute(String action, JSONArray args,
@@ -126,23 +145,31 @@ public class Beacon extends CordovaPlugin {
 				Checkin = sharedpreferences.getString("Checkin", null);
 						if (placeName.equalsIgnoreCase("Reception") || placeName.equalsIgnoreCase("OnsiteReception") || placeName.equalsIgnoreCase("PhotonCheBlock3-Reception")) {
 							if (onVisitStart == null) {
+								if(meetingdate_parse.compareTo(currentdate_parse)==0)
+								{
+								
 								message = "Welcome to the Photon World 2016 Conference !!!";
 								displayMessageAlertForReception(placeName, message,
 										callbackContext);
 								displayNotificationAlert(message);
 								editor.putString("onVisitStart", "onVisitStart");
 								editor.commit();
+								}
 							}
 						}
 					
 						if (placeName.equalsIgnoreCase("Check-in") || placeName.equalsIgnoreCase("OnsiteCheckIn") || placeName.equalsIgnoreCase("PhotonCheBlock3-Visit")) {
 							if (Checkin == null) {
+								
+								if(meetingdate_parse.compareTo(currentdate_parse)==0)
+								{
 								message = "Skip the Queue, Register Instantly! Scan the QR code on your badge with your mobile";
 								displayMessageAlert(placeName, message,
 										callbackContext);
 
 								editor.putString("Checkin", "Checkin");
  								editor.commit();
+								}
 							}
 						}
 					}
@@ -154,12 +181,16 @@ public class Beacon extends CordovaPlugin {
 					
 						if (placeName.equalsIgnoreCase("Reception") || placeName.equalsIgnoreCase("OnsiteReception") || placeName.equalsIgnoreCase("PhotonCheBlock3-Reception")) {
 							if (onVisitEnd == null) {
+								
+								if(meetingdate_parse.compareTo(currentdate_parse)==0&&(time_parse.compareTo(currentime_parse)<=0))
+								{
 								message = "Thank You for attending, See you next year!";
 								displayMessageAlertForReception(placeName, message,
 										callbackContext);
 								displayNotificationAlert(message);
  								editor.putString("onVisitEnd", "onVisitEnd");
 								editor.commit();
+								}
 							}
 						}
 					}
