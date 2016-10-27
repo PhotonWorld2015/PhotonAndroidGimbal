@@ -161,8 +161,8 @@ public class Beacon extends CordovaPlugin {
 				Checkin = sharedpreferences.getString("Checkin", null);
 						if (placeName.equalsIgnoreCase("Reception") || placeName.equalsIgnoreCase("OnsiteReception") || placeName.equalsIgnoreCase("PhotonCheBlock3-Reception")) {
 							if (onVisitStart == null) {
-								if(meetingdate_parse.compareTo(currentdate_parse)==0)
-								{
+// 								if(meetingdate_parse.compareTo(currentdate_parse)==0)
+// 								{
 								
 								message = "Welcome to the Photon World 2016 Conference !!!";
 								displayMessageAlertForReception(placeName, message,
@@ -171,22 +171,22 @@ public class Beacon extends CordovaPlugin {
 									
 								editor.putString("onVisitStart", "onVisitStart");
 								editor.commit();
-								}
+// 								}
 							}
 						}
 					
 						if (placeName.equalsIgnoreCase("Check-in") || placeName.equalsIgnoreCase("OnsiteCheckIn") || placeName.equalsIgnoreCase("PhotonCheBlock3-Visit")) {
 							if (Checkin == null) {
 								
-								if(meetingdate_parse.compareTo(currentdate_parse)==0)
-								{
+// 								if(meetingdate_parse.compareTo(currentdate_parse)==0)
+// 								{
 								message = "Skip the Queue, Register Instantly! Scan the QR code on your badge with your mobile";
 								displayMessageAlert(placeName, message,
 										callbackContext);
 
 								editor.putString("Checkin", "Checkin");
  								editor.commit();
-								}
+// 								}
 							}
 						}
 					}
@@ -199,7 +199,7 @@ public class Beacon extends CordovaPlugin {
 						if (placeName.equalsIgnoreCase("Reception") || placeName.equalsIgnoreCase("OnsiteReception") || placeName.equalsIgnoreCase("PhotonCheBlock3-Reception")) {
 							if (onVisitEnd == null) {
 								
-								if(meetingdate_parse.compareTo(currentdate_parse)==0&&(time_parse.compareTo(currentime_parse)<=0))
+								if((time_parse.compareTo(currentime_parse))<=0)
 								{
 								message = "Thank You for attending, See you next year!";
 								displayMessageAlertForReception(placeName, message,
